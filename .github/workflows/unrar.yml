@@ -10,7 +10,7 @@ jobs:
         run: |
           # Replace this URL with your Dropbox share link
           # IMPORTANT: Change "dl=0" to "dl=1" in the URL for direct download
-          curl -L -o your-file.rar "https://www.dropbox.com/scl/fi/a93k9ys23skoenlf1zvq3/Legion-100-tool-in-one-script.rar?rlkey=af8z5gknvjxbwz8i35x7kq729&st=nvltyysm&dl=0"
+          curl -L -o your-file.rar "https://www.dropbox.com/scl/fi/a93k9ys23skoenlf1zvq3/Legion-100-tool-in-one-script.rar?rlkey=af8z5gknvjxbwz8i35x7kq729&st=nvltyysm&dl=1"
       
       - name: Install unrar
         run: sudo apt-get update && sudo apt-get install -y unrar
