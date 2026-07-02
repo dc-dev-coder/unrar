@@ -1,0 +1,22 @@
+name: Unrar File
+
+on: [workflow_dispatch] # Allows you to manually trigger the action
+
+jobs:
+  unrar-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install unrar
+        run: sudo apt-get update && sudo apt-get install -y unrar
+
+      - name: Unrar the file
+        run: unrar x -p${{ secrets.RAR_PASSWORD }} your-file.rar ./extracted/
+        
+      - name: Upload extracted files as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: extracted-files
+          path: ./extracted/
